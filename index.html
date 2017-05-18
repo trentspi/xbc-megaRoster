@@ -22,19 +22,27 @@
 
     <section>
       <div class="container listForm">
-        <form action="index.html" method="post">
-          <p>
+        <form action="index.html" method="post" id="studentForm">
+          <div>
             <label for="name">Please enter your name</label>
-            <input id="name" name="name" type="text">
-          </p>
+            <input
+              id="name"
+              name="studentName"
+              type="text"
+              placeholder="Enter student name"
+              maxlength="30" 
+              autofocus
+              required
+            >
+          </div>
 
-          <p>
+          <div>
             <button class="waves-effect waves-light btn" type="submit" name="button">Submit</button>
-          </p>
+          </div>
 
         </form>
       </div>
-      <div class="container center listDiv"><ul id="list"></ul></div>
+      <div class="container center"><ul id="list"></ul></div>
     </section>
 
     <script src="js/index.js" type="text/javascript">
