@@ -35,11 +35,16 @@ const App = {
     const line = document.createElement('li');
     const button = document.createElement('button');
     const deleteIcon = document.createElement('i');
+    const randbutton = document.createElement('button');
+    const randIcon = document.createElement('i');
+    const upButton = document.createElement('button');
+    const downButton = document.createElement('button');
+    const upIcon = document.createElement('i');
+    const downIcon = document.createElement('i');
     if(document.querySelector('ul')) {
-      line.setAttribute("class", "card");
+      line.setAttribute("class", "card flow-text");
       line.setAttribute("studentid", key);
       button.className += "right btn-floating btn red";
-
       deleteIcon.setAttribute("class","small material-icons");
       deleteIcon.innerHTML = "delete";
       button.appendChild(deleteIcon);
@@ -54,9 +59,8 @@ const App = {
         button.parentNode.parentNode.removeChild(line);
       }
     }
-    const randbutton = document.createElement('button');
+
     randbutton.className += "right btn-floating btn blue";
-    const randIcon = document.createElement('i');
     randIcon.setAttribute("class","small material-icons");
     randIcon.innerHTML = "settings";
     randbutton.appendChild(randIcon);
@@ -91,12 +95,41 @@ const App = {
       let j = Math.floor(Math.random() * 6);
       randbutton.parentNode.className = "card " + colors[i] + " " + textColors[j] + "-text";
     }
+    downIcon.innerHTML = "fast_forward";
+    downIcon.setAttribute("class","small material-icons");
+    downButton.className += "right btn-floating btn green";
+    downButton.appendChild(downIcon);
+    downButton.setAttribute("style","transform: translateY(20%); margin-right:10px");
+    downButton.onclick = () => {
+      li = downButton.parentNode;
+      let i = 0;
+      while( (li = li.previousSibling) != null )
+        i++;
+      console.log(i);
+    }
+
+    upIcon.innerHTML = "fast_rewind";
+    upIcon.setAttribute("class","small material-icons");
+    upButton.className += "right btn-floating btn green";
+    upButton.appendChild(upIcon);
+    upButton.setAttribute("style","transform: translateY(20%); margin-right:10px");
+    upButton.onclick = () => {
+      li = upButton.parentNode;
+      let i = 0;
+      while( (li = li.previousSibling) != null )
+        i++;
+      console.log(i);
+    }
+
+
 
     if(input.value) {
       line.textContent = input.value;
       line.style.fontSize = "40px";
       line.appendChild(button);
       line.appendChild(randbutton);
+      line.appendChild(downButton);
+      line.appendChild(upButton);
       list.appendChild(line);
       list.insertBefore(line, list.firstChild);}
     }
