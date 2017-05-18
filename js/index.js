@@ -124,6 +124,7 @@ const App = {
 
 
     if(input.value) {
+      //localStorage.setItem('id'+key, document.getElementsByAttribute('studentid', key))
       line.textContent = input.value;
       line.style.fontSize = "40px";
       line.appendChild(button);
