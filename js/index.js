@@ -20,7 +20,7 @@ const App = {
       id: this.key,
       names: f.studentName.value,
     }
-    this.students.push(student);
+    this.students.unshift(student);
 
     this.addListItem(this.studentList, this.key);
 
