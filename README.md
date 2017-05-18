@@ -40,3 +40,13 @@ Persist the student data using `window.localStorage`.
 ### Super Mega Bonus Credit Hyper Fighting
 
 * Add a _promote_ button to every list item that changes the appearance (_e.g._ changes the background color, adds a border, etc.) of that item when clicked.
+
+## Day 4 Homework
+
+Make "move down" work if you haven't already.
+
+Allow the editing of student names after they're already in the list. (Gee, it would be nice if I could make that span's _content editable_!)
+
+### Super Mega Bonus Credit Hyper Fighting
+
+Have a nice weekend.
