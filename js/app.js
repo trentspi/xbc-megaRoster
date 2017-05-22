@@ -48,14 +48,14 @@ class Megaroster {
   promoteStudent(student, ev) {
     const btn = ev.target
     const li = btn.closest('.student')
+    const color = this.getRandomColor()
     student.promoted = !student.promoted
-
     if (student.promoted) {
-      li.classList.add('promoted')
+      li.style.backgroundColor = color
     } else {
-      li.classList.remove('promoted')
+      li.style.backgroundColor = 'white'
     }
-    
+
     this.save()
   }
 
@@ -141,6 +141,7 @@ class Megaroster {
       icon.classList.remove('fa-check')
       icon.classList.add('fa-pencil')
       student.name = nameField.textContent
+
       this.save()
     } else {
       nameField.contentEditable = true
@@ -199,6 +200,14 @@ class Megaroster {
 
       this.save()
     }
+  }
+  getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 
   removeClassName(el, className){
